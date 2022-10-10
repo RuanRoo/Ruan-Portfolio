@@ -73,7 +73,7 @@ const Contact = () => {
             <span className="emailMe">
               <p>not a fan of forms? &nbsp;</p>
               <Mailto
-                email="foo@bar.baz"
+                email="radyn00@gmail.com"
                 subject="from portfolio"
                 body="Hi Ruan"
               >
