@@ -78,7 +78,7 @@ a {
 }
 .container {
   display: grid;
-  grid-template-rows: 100vh 50px 100vh 100vh 100vh 100vh 100px;
+  grid-template-rows: 100vh 50px 100vh 100vh 100vh 100vh;
   scroll-snap-type: y mandatory;
 }
 
@@ -446,6 +446,7 @@ h4 {
   margin-left: auto;
   margin-right: auto;
   margin-top: 70px;
+  padding-top: 35px;
   font-family: 'Urbanist';
 }
 .contactForm {

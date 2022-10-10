@@ -5,7 +5,7 @@ import Landing from "./Components/Landing";
 import Navbar from "./Components/NavBar";
 import Projects from "./Components/Projects";
 import Contact from "./Components/Contact";
-import Footer from "./Components/Footer";
+
 
 import { BrowserRouter } from "react-router-dom";
 
@@ -20,7 +20,6 @@ function App() {
         <Knowledge />
         <Projects />
         <Contact />
-        <Footer />
       </BrowserRouter>
     </div>
   );
