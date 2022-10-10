@@ -1,38 +1,548 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,700&family=Urbanist:wght@300;500&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #f1efe3;
+}
+
+.nav {
+  height: 50px;
+  background-color: rgb(224, 149, 29);
+  color: #f3f2ec;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.nav li {
+  padding: 0 20px;
+  font-family: "Urbanist";
+}
+.nav li:hover {
+  color: #404040;
+  transition: 0.4s;
+  font-weight: bolder;
+  font-size: larger;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.viewWorkDiv {
   text-align: center;
+  align-items: center;
+  width: 40%;
+  margin-top: 155px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 18px;
+  animation: fadeInAnimation ease 5s;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.viewWork {
+  margin: 0;
+  padding: 15px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.arrow {
+  width: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+  display: flex;
+  transition: 0.5s ease-in-out;
+  font-size: larger;
+}
+
+.viewWorkDiv :hover .arrow {
+  rotate: z 90deg;
+}
+.viewWorkDiv :hover {
+  color: rgb(224, 149, 29);
+  transition: 0.6s ease-in-out;
+}
+.container {
+  display: grid;
+  grid-template-rows: 100vh 50px 100vh 100vh 100vh 100vh 100px;
+  scroll-snap-type: y mandatory;
+}
+
+.landing {
+  background-size: cover;
+  background-position: center;
+  background-color: rgb(7, 7, 7);
+  scroll-snap-align: center;
+}
+
+.video {
+  height: 100vh;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+}
+.logo {
+  margin-top: 160px;
+  margin-left: 125px;
+  color: #f3f2ec;
+  position: absolute;
+  font-family: "Urbanist";
+  animation: fadeInAnimation ease 4s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.name {
+  color: rgb(224, 149, 29);
+  font-size: larger;
 }
-
-.App-link {
-  color: #61dafb;
+.type-writer {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  animation: typing 2.5s steps(40, end), blink-caret 0.75s step-end infinite;
 }
-
-@keyframes App-logo-spin {
+@keyframes typing {
   from {
-    transform: rotate(0deg);
+    width: 0;
   }
   to {
-    transform: rotate(360deg);
+    width: 100%;
   }
+}
+
+.aboutTitle {
+  margin-top: 65px;
+  margin-bottom: 0;
+  padding-bottom: 5px;
+  color: rgb(224, 149, 29);
+  font-size: 36px;
+  font-family: urbanist;
+}
+.aboutDiv {
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+.profilePhoto {
+  width: 100%;
+  border-radius: 10px;
+  animation: fadeInAnimation ease 3s;
+}
+.about {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  scroll-snap-align: center;
+}
+.aboutText {
+  padding-left: 50px;
+  color: #404040;
+  font-family: urbanist;
+  border-radius: 10px;
+}
+.interest {
+  font-weight: bold;
+  font-size: larger;
+}
+.underline {
+  width: 125px;
+  height: 6px;
+  background-color: rgb(224, 149, 29);
+  border-radius: 2px;
+  margin-bottom: 35px;
+}
+.underline2 {
+  width: 200px;
+  height: 6px;
+  background-color: rgb(224, 149, 29);
+  border-radius: 2px;
+  margin-bottom: 35px;
+}
+.underlineSkills {
+  width: 125px;
+  height: 6px;
+  background-color: rgb(224, 149, 29);
+  border-radius: 2px;
+  margin-bottom: 15px;
+}
+.skillsContainer {
+  background-color: #2f2e2e;
+}
+.skillsTitle {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.skills {
+  width: 65%;
+  margin-left: auto;
+  margin-right: auto;
+  scroll-snap-align: center;
+}
+
+.bar {
+  width: 300px;
+  height: 30px;
+  background-color: #404040;
+}
+.exprience {
+  width: 80%;
+}
+.skillsWrapper {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  grid-template-columns: 40% 60%;
+}
+
+.skillsSubTitle1 {
+  font-family: 'Urbanist';
+  font-size: 24px;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 55px;
+  color: #f1efe3;
+}
+.skillsSubTitle2 {
+  font-family: 'Urbanist';
+  font-size: 24px;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 35px;
+  color: #f1efe3;
+}
+
+.sklilsProgress {
+  width: 50%;
+  margin: 50px;
+}
+.percentage {
+  width: 15px;
+  margin: 0;
+}
+.skillName {
+  font-family: "Urbanist";
+  font-size: 14px;
+  font-weight: bold;
+  width: 100px;
+}
+.line {
+  height: 25px;
+  margin: 0 auto;
+  line-height: 25px;
+  font-size: 16px;
+  color: #2f2e2e;
+  padding: 0 0 0 10px;
+  position: relative;
+  border-radius: 7px;
+}
+.span {
+  text-align: right;
+}
+.line::before {
+  content: "";
+  width: 100%;
+  position: absolute;
+  left: 0;
+  height: 25px;
+  top: 0;
+  z-index: -2;
+  background: #f1efe3;
+  border-radius: 7px;
+}
+.line:after {
+  content: "";
+  background: rgb(224, 149, 29);
+  height: 25px;
+  transition: 0.8s;
+  display: block;
+  width: 90%;
+  animation: animate 1 4s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: 7px;
+}
+.line1:after {
+  max-width: 90%;
+  animation-delay: 0.5s;
+}
+.line2:after {
+  max-width: 80%;
+  animation-delay: 0.7s;
+}
+.line3:after {
+  max-width: 75%;
+  animation-delay: 0.9s;
+}
+.line4:after {
+  max-width: 70%;
+  animation-delay: 1.1s;
+}
+.line5:after {
+  max-width: 70%;
+  animation-delay: 1.3s;
+}
+.line6:after {
+  max-width: 60%;
+  animation-delay: 1.5s;
+}
+.line7:after {
+  max-width: 60%;
+  animation-delay: 1.7s;
+}
+.line8:after {
+  max-width: 50%;
+  animation-delay: 1.9s;
+}
+@keyframes animate {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100;
+  }
+}
+
+.softSkillWrapper {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+}
+
+.skillCard {
+  background-color: #393939;
+  font-family: 'Urbanist';
+  margin: 10px;
+  color: #80807f;
+  text-align: center;
+  padding: 8px;
+  border-radius: 7px;
+  width: 90%;
+  height: 90%;
+  
+}
+
+.softPar {
+  font-size: 14px;
+  padding-bottom: 5px;
+}
+h4 {
+  margin-bottom: 2px;
+  margin-top: 4px;
+}
+
+.projects {
+  grid-template-columns: 30% 30% 30%;
+  width: 60%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+  display: grid;
+  text-align: center;
+  align-items: center;
+}
+.projectHeader {
+  display: flex;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.projectSection {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.projectTitle {
+  margin-top: 65px;
+  margin-bottom: 0;
+  padding: 5px;
+  color: rgb(224, 149, 29);
+  font-size: 36px;
+  font-family: "Urbanist";
+}
+.card {
+  border: 1px #2f2e2e solid;
+  background-color: #2f2e2e;
+  color: #f1efe3;
+  border-radius: 7px;
+  height: auto;
+  position: relative;
+  margin: 25px;
+  font-family: 'Urbanist';
+  align-items: center;
+  transition: transform .2s;
+}
+.gameTitle {
+  text-align: left;
+  margin: 0;
+  padding: 20px;
+}
+.imageContainer {
+  width: 90%;
+  height: auto;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  padding-bottom: 15px;
+}
+.thumbnail {
+  width: 100%;
+}
+
+.description {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: left;
+  width: 60%;
+  color: rgb(224, 149, 29);
+}
+.card:hover {
+  transform: scale(1.2)
+}
+.card:hover .imageContainer {
+  opacity: 0.3;
+}
+.card:hover .description {
+  opacity: 1;
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: 55% 45%;
+  width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 70px;
+  font-family: 'Urbanist';
+}
+.contactForm {
+  width: 70%;
+  margin-left: 170px;
+  height: 85%;
+  border: 3px rgb(224, 149, 29) solid;
+  padding: 20px;
+  border-radius: 10px;
+}
+.contactTitle {
+
+  font-size: 34px;
+  margin: 0;
+  padding-top: 15px;
+  padding-bottom: 25px;
+}
+.label {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: Urbanist;
+}
+.input {
+  border-radius: 7px;
+  height: 35px;
+  width: 60%;
+  border: 2px solid rgb(224, 149, 29);
+  background-color: #f1efe3;
+  color: #2f2e2e;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.inputMessage {
+  width: 95%;
+  height: 100px;
+  border: 2px solid rgb(224, 149, 29);
+  background-color: #f1efe3;
+  border-radius: 7px;
+  color: #2f2e2e;
+  text-align:start;
+  margin-top: 10px;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.socials {
+  width: 50%;
+  text-align: center;
+  align-items: center;
+  margin-left: 20%;
+  margin-top: 55px;
+  padding: 20px;
+}
+.socialHeading {
+
+  margin: 0;
+}
+.socialIcons{
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.github:hover {
+  scale: 1.3;
+}
+.linkedin:hover {
+  scale: 1.3;
+}
+.blog:hover {
+  scale: 1.3;
+}
+.button {
+  border-radius: 5px;
+  border: 2px solid rgb(224, 149, 29);
+  background-color: #f1efe3;
+  margin-top: 10px;
+  font-size: 14px;
+  padding: 3px 5px;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: rgb(224, 149, 29);
+}
+.emailMe {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  
+}
+
+.footer {
+  background-color: #2f2e2e;
+  font-family: Roboto;
+  font-size: 28px;
+  color: #f1efe3;
+  text-align: center;
+
 }
