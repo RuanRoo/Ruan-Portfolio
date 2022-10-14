@@ -1,5 +1,5 @@
 import Logo from "./Logo";
-import video from "../Assets/Sequence 01_1.mp4"
+import Bulb from "../Assets/escalator.jpg"
 import { useEffect, useState } from "react";
 
 const Landing = () => {
@@ -16,7 +16,7 @@ const Landing = () => {
 
   return (
     <div className="landing" id="home">
-      <video src={video} autoPlay loop className="video"/>
+      <img className="heroImage" src={Bulb} alt="Hero" />
       {showComponent && <Logo />}
     </div>
   );

@@ -55,17 +55,17 @@ const Knowledge = () => {
         {isVisible && (
           <div className="skillsWrapper">
             <div className="sklilsProgress">
-              <h2 className="skillsSubTitle1">technical competencies</h2>
+              <h2 className="skillsSubTitle1">technical proficiency</h2>
               <div className="line line1">
                 <h3 className="skillName">HTML / CSS</h3>
               </div>
 
               <div className="line line2">
-                <h3 className="skillName">React</h3>
+                <h3 className="skillName">JavaScript</h3>
               </div>
 
               <div className="line line3">
-                <h3 className="skillName">JavaScript</h3>
+                <h3 className="skillName">React.js</h3>
               </div>
 
               <div className="line line4">

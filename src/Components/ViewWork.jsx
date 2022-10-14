@@ -6,7 +6,7 @@ function ViewWork() {
         <Link to="#nav" smooth>
               <div className="viewWorkDiv">
                 <h4 className="viewWork">
-                  view my work <span className="arrow"> &#8594; </span>
+                  more about me <span className="arrow"> &#8594; </span>
                 </h4>
               </div>
             </Link>
