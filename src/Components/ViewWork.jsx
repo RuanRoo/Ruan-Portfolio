@@ -1,13 +1,15 @@
 import { HashLink as Link } from "react-router-hash-link";
+import arrow from "../Assets/Arrow1.png"
 
 function ViewWork() {
   return (
-    <div>
-        <Link to="#nav" smooth>
+    <div className="viewWorkContainer">
+        <Link to="#about" smooth>
               <div className="viewWorkDiv">
                 <h4 className="viewWork">
-                  more about me <span className="arrow"> &#8594; </span>
+                  more about me
                 </h4>
+                <img src={arrow} className="arrow" alt="" />
               </div>
             </Link>
     </div>

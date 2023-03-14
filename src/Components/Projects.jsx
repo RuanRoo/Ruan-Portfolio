@@ -1,9 +1,9 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import beanWhere from "../Assets/beanWhere.jpg";
-import cardGame from "../Assets/cardGame.jpg";
-import todoList from "../Assets/todoList.jpg";
+import capitalExpress from "../Assets/capitalExpress.jpg";
+import meditate from "../Assets/meditate.jpg";
+import { HashLink as Link } from "react-router-hash-link";
 
 const Projects = () => {
   useEffect(() => {
@@ -19,7 +19,7 @@ const Projects = () => {
       <span className="projectHeader">
         <h2
           data-aos="fade-right"
-          data-aos-offset="500"
+          data-aos-offset="200"
           data-aos-duration="600"
           className="projectTitle"
         >
@@ -27,61 +27,107 @@ const Projects = () => {
         </h2>
         <h2
           data-aos="fade-right"
-          data-aos-offset="500"
-          data-aos-duration="1600"
-          data-aos-delay="1500"
+          data-aos-offset="400"
+          data-aos-duration="1200"
+          data-aos-delay="800"
           className="projectTitle"
         >
-          projects
+          work
         </h2>
-      </span>
-      <div className="projectSection">
         <div
-          data-aos="fade-right"
+          data-aos="fade-left"
           data-aos-duration="1200"
           data-aos-delay="400"
-          data-aos-offset="500"
+          data-aos-offset="300"
           className="underline2"
         ></div>
-      </div>
+      </span>
       <div className="projects">
-        <a href="https://bean-where.herokuapp.com/" target="_blank" rel="noreferrer">
-        <div className="card">
-          <h4 className="gameTitle">bean where?</h4>
-          <div className="imageContainer">
-            <img className="thumbnail" src={beanWhere} alt="image1" />
+        <div className="projectSections">
+          <div className="number">1.</div>
+          <div className="projectImageDiv">
+            <img src={capitalExpress} className="projectImage" alt="" />
           </div>
-          <p className="description">
-            This is a kind of social media coffee app where users can share
-            their favourite coffee spots in Cape Town. Built using the MERN
-            stack with authentication.
-          </p>
-        </div>
-        </a>
-        <a href="https://ancient-spire-76695.herokuapp.com/" target="_blank" rel="noreferrer">
-        <div className="card">
-          <h4 className="gameTitle">memory game</h4>
-          <div className="imageContainer">
-            <img className="thumbnail" src={cardGame} alt="image2" />
+          <div className="projectDescription">
+            <h2>Capital Express</h2>
+            <p>
+              I was the lead developer on this projects while working on a
+              contract for 4Shaw Productions. It is an understated yet
+              functional websoite that was built in Wordpress using Elementor
+              and some custom CSS and Javascript.
+            </p>
+            <a
+              href="https://capitalexpress.co.za/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              view project
+            </a>
           </div>
-          <p className="description">
-            This was just a simple card game I built to practice my skills, have
-            fun!
-          </p>
         </div>
-        </a>
-        <a href="https://mernstack-todo-list-with-auth.herokuapp.com/login" target="_blank" rel="noreferrer">
-        <div className="card">
-          <h4 className="gameTitle">todo list</h4>
-          <div className="imageContainer">
-            <img className="thumbnail" src={todoList} alt="image3" />
+        <div className="projectSections2">
+          <div className="projectDescription2">
+            <h2>Meditate</h2>
+            <p>
+              I was the lead developer on this projects while working on a
+              contract for 4Shaw Productions. It is an understated yet
+              functional websoite that was built in Wordpress using Elementor
+              and some custom CSS and Javascript.
+            </p>
+            <a
+              href="https://rainbow-lolly-327dad.netlify.app/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              view project
+            </a>
           </div>
-          <p className="description">
-            Fully functional todo list built using the MERN stack with
-            authentication.
-          </p>
+          <div className="projectImageDiv">
+            <img src={meditate} className="projectImage" alt="" />
+          </div>
+          <div className="number2">2.</div>
         </div>
-        </a>
+        <div className="projectSectionsMobile">
+          <div className="number2">2.</div>
+          <div className="projectImageDiv">
+            <img src={meditate} className="projectImage" alt="" />
+          </div>
+          <div className="projectDescription2">
+            <h2>Meditate</h2>
+            <p>
+              I was the lead developer on this projects while working on a
+              contract for 4Shaw Productions. It is an understated yet
+              functional websoite that was built in Wordpress using Elementor
+              and some custom CSS and Javascript.
+            </p>
+            <a
+              href="https://rainbow-lolly-327dad.netlify.app/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              view project
+            </a>
+          </div>
+        </div>
+        <div className="projectSections">
+          <div className="number">3.</div>
+          <div className="projectImageDiv">
+            <img src={capitalExpress} className="projectImage" alt="" />
+          </div>
+          <div className="projectDescription">
+            <h2>Capital Express</h2>
+            <p>
+              I was the lead developer on this projects while working on a
+              contract for 4Shaw Productions. It is an understated yet
+              functional websoite that was built in Wordpress using Elementor
+              and some custom CSS and Javascript.
+            </p>
+            <a href="https://capitalexpress.co.za/">view project</a>
+          </div>
+        </div>
+        <Link to="#contact">
+        <div className="hireButton">hire me</div>
+        </Link>
       </div>
     </div>
   );

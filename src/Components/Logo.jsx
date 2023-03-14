@@ -15,7 +15,7 @@ const Logo = () => {
   return (
           <div className="logo">
             <h1>
-              Hi, <span className="name"> I'm Ruan.</span>
+              Hi, I'm <br /> Ruan Radyn
             </h1>
             {showComponent && <Typewriter />}
           </div>

@@ -1,20 +1,13 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect, useRef, useState } from "react";
+import { SkillsData } from "./SkillsData";
+import { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
+import arrow2 from "../Assets/Arrow2.png";
+import arrow3 from "../Assets/Arrow3.png";
 
 const Knowledge = () => {
-  const [isVisible, setIsVisible] = useState();
-  const myRef = useRef();
-  console.log(isVisible);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-      setIsVisible(entry.isIntersecting);
-    });
-    observer.observe(myRef.current);
-    console.log(myRef.current);
-  }, []);
+  const { ref: myRef, inView: isVisible } = useInView();
 
   useEffect(() => {
     AOS.init({
@@ -24,20 +17,23 @@ const Knowledge = () => {
     });
   });
 
-  //  const renderElement = () => {
-  //     if(isVisible === true) {
-  //       return (
+  const [selected, setSelected] = useState(null);
 
-  //       )
-  //     }
-  //   }
+  const toggle = (i) => {
+
+    if (selected === i) {
+      return setSelected(null);
+    }
+
+    setSelected(i);
+  };
 
   return (
     <div className="skillsContainer" id="skills">
       <div className="skillsTitle">
         <h2
           data-aos="fade-right"
-          data-aos-offset="400"
+          data-aos-offset="100"
           data-aos-duration="800"
           className="aboutTitle"
         >
@@ -47,94 +43,126 @@ const Knowledge = () => {
           data-aos="fade-right"
           data-aos-duration="1000"
           data-aos-delay="600"
-          data-aos-offset="400"
+          data-aos-offset="200"
           className="underlineSkills"
         ></div>
       </div>
-      <div ref={myRef} data-aos="zoom-in" className="skills">
-        {isVisible && (
-          <div className="skillsWrapper">
-            <div className="sklilsProgress">
-              <h2 className="skillsSubTitle1">technical proficiency</h2>
-              <div className="line line1">
-                <h3 className="skillName">HTML / CSS</h3>
-              </div>
+      <div data-aos="zoom-in" className="skills">
+        <div ref={myRef} className="skillsWrapper">
+          {isVisible ? (
+            <>
+              <div className="skillsProgress">
+                <div className="lineDiv">
+                  <h3 className="skillName">HTML / CSS</h3>
+                  <div className="barDiv">
+                    <div className="line line1"></div>
+                    <p>90%</p>
+                  </div>
+                </div>
 
-              <div className="line line2">
-                <h3 className="skillName">JavaScript</h3>
-              </div>
+                <div className="lineDiv">
+                  <h3 className="skillName">REACT.JS</h3>
+                  <div className="barDiv">
+                    <div className="line line3"></div>
+                    <p>80%</p>
+                  </div>
+                </div>
 
-              <div className="line line3">
-                <h3 className="skillName">React.js</h3>
+                <div className="lineDiv">
+                  <h3 className="skillName">EXPRESS.JS</h3>
+                  <div className="barDiv">
+                    <div className="line line5"></div>
+                    <p>50%</p>
+                  </div>
+                </div>
+                <div className="lineDiv">
+                  <h3 className="skillName">NEXT.JS</h3>
+                  <div className="barDiv">
+                    <div className="line line7"></div>
+                    <p>40%</p>
+                  </div>
+                </div>
               </div>
+              <div className="skillsProgress">
+                <div className="lineDiv">
+                  <h3 className="skillName">JAVASCRIPT</h3>
+                  <div className="barDiv">
+                    <div className="line line2"></div>
+                    <p>85%</p>
+                  </div>
+                </div>
+                <div className="lineDiv">
+                  <h3 className="skillName">NODE.JS</h3>
+                  <div className="barDiv">
+                    <div className="line line4"></div>
+                    <p>50%</p>
+                  </div>
+                </div>
+                <div className="lineDiv">
+                  <h3 className="skillName">MONGODB</h3>
+                  <div className="barDiv">
+                    <div className="line line6"></div>
+                    <p>50%</p>
+                  </div>
+                </div>
 
-              <div className="line line4">
-                <h3 className="skillName">Node.js</h3>
+                <div className="lineDiv">
+                  <h3 className="skillName">JQUERY</h3>
+                  <div className="barDiv">
+                    <div className="line line8"></div>
+                    <p>30%</p>
+                  </div>
+                </div>
               </div>
-
-              <div className="line line5">
-                <h3 className="skillName">Express.js</h3>
+            </>
+          ) : (
+            ""
+          )}
+        </div>
+      </div>
+      <div className="softSkillWrapper">
+        <div className="skillsTitle">
+          <h2
+            data-aos="fade-right"
+            data-aos-offset="100"
+            data-aos-duration="800"
+            className="softSkillsTitle"
+          >
+            soft skills
+          </h2>
+          <div
+            data-aos="fade-right"
+            data-aos-duration="1000"
+            data-aos-delay="600"
+            data-aos-offset="200"
+            className="underlineSkills2"
+          ></div>
+        </div>
+        <div className="faqAccordion">
+          {SkillsData.map((item, i) => (
+            <div className="faqItem" key={i}>
+              <div
+                className={
+                  selected === i ? "faqQuestion selected" : "faqQuestion"
+                }
+                onClick={() => toggle(i)}
+              >
+                <p>{item.question}</p>
+                <span>
+                  {selected === i ? (
+                    <img src={arrow3} alt="ip arrow" />
+                  ) : (
+                    <img src={arrow2} alt="down arrow" />
+                  )}
+                </span>
               </div>
-
-              <div className="line line6">
-                <h3 className="skillName">MongoDB</h3>
+              <div className={selected === i ? "faqAnswer show" : "faqAnswer"}>
+                <div className="answer">{item.answer}</div>
               </div>
-
-              <div className="line line7">
-                <h3 className="skillName">Next.js</h3>
-              </div>
-
-              <div className="line line8">
-                <h3 className="skillName">jQuery</h3>
-              </div>
+              <hr className="skillsLine" />
             </div>
-            <div className="sklilsProgress">
-              <h1 className="skillsSubTitle2">soft skills</h1>
-              <div className="softSkillWrapper">
-                <div
-                  className="skillCard"
-                  data-aos="fade-left"
-                  data-aos-offset="400"
-                  data-aos-duration="800"
-                >
-                  <h4>workflow management</h4>
-                  <p className="softPar">
-                    as an experienced workflow manager, i can look at the
-                    workload of a particular project and implement steps to meet
-                    the target.
-                  </p>
-                </div>
-                <div className="skillCard" data-aos="fade-left"
-                  data-aos-offset="400"
-                  data-aos-duration="800"
-                  data-aos-delay="300">
-                  <h4>problem solving</h4>
-                  <p className="softPar">
-                    i am able to step back from a problem to get broader
-                    perspective, which helps me to find a solution.
-                  </p>
-                </div>
-                <div className="skillCard" data-aos="fade-left"
-                  data-aos-duration="800"
-                  data-aos-delay="600">
-                  <h4>teamwork</h4>
-                  <p className="softPar">
-                    i have worked in various teams of different sizes, and do well with colloboration and teamwork.
-                  </p>
-                </div>
-                <div className="skillCard" data-aos="fade-left"
-                  data-aos-duration="800"
-                  data-aos-delay="900">
-                  <h4>communication</h4>
-                  <p className="softPar">
-                    i worked 100% remotely for 2 years in a senior and
-                    management role in which communication was key.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
+          ))}
+        </div>
       </div>
     </div>
   );

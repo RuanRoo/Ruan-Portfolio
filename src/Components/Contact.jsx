@@ -1,15 +1,16 @@
 import github from "../Assets/github.png";
 import linkedin from "../Assets/linkedin.png";
 import blogger from "../Assets/blogger.png";
-
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const form = useRef();
+
+  const [status, setStatus] = useState("")
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -24,12 +25,14 @@ const Contact = () => {
       .then(
         (result) => {
           console.log(result.text);
+          setStatus('success')
+        
         },
         (error) => {
           console.log(error.text);
         }
       );
-      e.target.reset()
+    e.target.reset();
   };
 
   const Mailto = ({ email, subject = "", body = "", children }) => {
@@ -49,81 +52,117 @@ const Contact = () => {
   });
 
   return (
-    <div id="contact" className="contact">
-      <div className="contactForm" data-aos="zoom-in-up">
-        <h1 className="contactTitle">get in touch</h1>
-        <form ref={form} onSubmit={sendEmail}>
-          <label className="label">your name:</label> <br />
-          <input className="input" type="text" name="from_name" /> <br />
-          <br />
-          <label className="label">your email:</label> <br />
-          <input className="input" type="email" name="from_email" /> <br />
-          <br />
-          <label className="label" name="message">
-            message:
-          </label>{" "}
-          <br />
-          <textarea className="inputMessage" name="message"></textarea> <br />
-          <button className="button" type="submit">
-            send
-          </button>
-          <br />
-          <br />
-          <div className="center">
-            <span className="emailMe">
-              <p>not a fan of forms? &nbsp;</p>
-              <Mailto
-                email="radyn00@gmail.com"
-                subject="from portfolio"
-                body="Hi Ruan"
-              >
-                <b>Mail me</b>
-              </Mailto>
-              <p>&nbsp;direct</p>
-            </span>
-          </div>
-        </form>
-      </div>
-      <div className="socials">
-        <div className="socialHeading">
-          <h1>find me on socials</h1>
-          <p>
-            to view some of my actual code, visit my github page linked below.
-            You can also find me on LinkedIn and have a look at my blog.
-          </p>
-        </div>
-        <div
-          className="socialIcons"
-          data-aos="fade-left"
-          data-aos-duration="1200"
-          data-aos-delay="400"
+    <div id="contact" className="contactContainer">
+      <div className="contactTitleWrapper">
+        <h2
+          data-aos="fade-right"
+          data-aos-offset="100"
+          data-aos-duration="800"
+          className="contactTitle"
         >
-          <a href="https://github.com/RuanRoo" target="_blank" rel="noreferrer">
-            <div className="github">
-              <img src={github} alt="" />
+          Get in touch
+        </h2>
+        <div
+          data-aos="fade-left"
+          data-aos-duration="1000"
+          data-aos-delay="600"
+          data-aos-offset="100"
+          className="contactUnderline"
+        ></div>
+      </div>
+      <div className="contact">
+        <div className="contactForm" data-aos="zoom-in-up">
+          <form ref={form} onSubmit={sendEmail}>
+            <div className="labelDiv">
+              <label className="label">Name</label> <br />
+              <input className="input" type="text" name="from_name" /> <br />
             </div>
-          </a>
-          <a
-            href="https://linkedin.com/in/ruan-radyn-2998971a4"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <div className="linkedin">
-              <img src={linkedin} alt="" />
+            <br />
+            <div className="labelDiv">
+              <label className="label">Email</label> <br />
+              <input className="input" type="email" name="from_email" /> <br />
             </div>
-          </a>
-          <a
-            href="https://ruanradyn.blogspot.com/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <div className="blog">
-              <img src={blogger} alt="" />
+            <br />
+            <div className="labelDiv">
+              <label className="label" name="message">
+                Message
+              </label> <br />
+              <textarea className="inputMessage" name="message"></textarea>{" "}
+              <br />
             </div>
-          </a>
+            <div className="sendDiv">
+              <button className="button" type="submit">
+              {status && renderAlert()}
+                send
+              </button>
+              <div className="center">
+              <span className="emailMe">
+                <p>not a fan of forms? &nbsp;</p>
+                <Mailto
+                  email="radyn00@gmail.com"
+                  subject="from portfolio"
+                  body="Hi Ruan"
+                >
+                  <b>Mail me</b>
+                </Mailto>
+                <p>&nbsp;direct</p>
+              </span>
+            </div>
+            </div>
+            <br />
+            <br />
+          </form>
+        </div>
+        <div className="socialContainer">
+          <div className="socials">
+            <div className="socialHeading">
+              <h1>find me on socials</h1>
+              <p>
+                To view some of my code, visit my github page linked
+                below. You can also find me on LinkedIn and have a look at my
+                blog.
+              </p>
+            </div>
+            <div
+              className="socialIcons"
+              data-aos="fade-left"
+              data-aos-duration="1200"
+              data-aos-delay="400"
+            >
+              <a
+                href="https://github.com/RuanRoo"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={github} className="github" alt="" />
+              </a>
+              <a
+                href="https://linkedin.com/in/ruan-radyn-2998971a4"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={linkedin} className="linkedin" alt="" />
+              </a>
+              <a
+                href="https://ruanradyn.blogspot.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={blogger} className="blog" alt="" />
+              </a>
+            </div>
+            
+          </div>
         </div>
       </div>
     </div>
   );
 };
+
+const renderAlert = () => (
+  <div>
+    &#x2713;
+  </div>
+)
+
 export default Contact;

@@ -1,5 +1,5 @@
 import Logo from "./Logo";
-import Bulb from "../Assets/escalator.jpg"
+import Bulb from "../Assets/escalator1.jpg"
 import { useEffect, useState } from "react";
 
 const Landing = () => {
