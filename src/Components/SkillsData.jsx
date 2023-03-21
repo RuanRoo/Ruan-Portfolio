@@ -2,7 +2,7 @@ export const SkillsData = [
   {
     question: "PROBLEM SOLVING",
     answer:
-      "My previous work experience has greatly impacted my ability to find creative solutions to problems. I approach problems by stepping back, doing thorough research, analysing the problem as well as the possible outcomes, to make the best decision in the process My creative side allows me to come up with out of the box ideas and solutions and view a problem from different perspectives.",
+      "My previous work experience has greatly impacted my ability to find creative solutions to problems. I approach problems by stepping back, doing thorough research, analysing the problem, as well as the possible outcomes, to find the best path forward. My creative side allows me to come up with out of the box ideas and solutions and view a problem from different perspectives.",
    },
   {
     question: "COMMUNICATION",
