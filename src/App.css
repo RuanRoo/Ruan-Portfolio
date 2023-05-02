@@ -670,7 +670,7 @@ a {
   animation-delay: 1.5s;
 }
 .line7:after {
-  max-width: 40%;
+  max-width: 60%;
   animation-delay: 1.7s;
 }
 .line8:after {
@@ -828,24 +828,31 @@ h4 {
   font-size: 42px;
   font-weight: normal;
 }
+
+.projectDescription2 span {
+  font-size: 18px;
+}
 .projectDescription p {
   font-size: 14px;
 }
 .projectDescription a {
   font-weight: bold;
+  text-decoration: underline;
 }
 .projectDescription a:hover {
-  text-decoration: underline;
+  color: #2f2e2e;
 }
 .projectDescription2 a {
   font-weight: bold;
+  text-decoration: underline;
 }
 .projectDescription2 a:hover {
-  text-decoration: underline;
+  color: #2f2e2e;
 }
 .projectDescription2 h2 {
   font-size: 42px;
   font-weight: normal;
+  line-height: 25px;
 }
 .projectDescription2 p {
   font-size: 14px;

@@ -67,19 +67,18 @@ const Knowledge = () => {
                     <p>80%</p>
                   </div>
                 </div>
-
+                <div className="lineDiv">
+                  <h3 className="skillName">NEXT.JS</h3>
+                  <div className="barDiv">
+                    <div className="line line7"></div>
+                    <p>60%</p>
+                  </div>
+                </div>
                 <div className="lineDiv">
                   <h3 className="skillName">EXPRESS.JS</h3>
                   <div className="barDiv">
                     <div className="line line5"></div>
                     <p>50%</p>
-                  </div>
-                </div>
-                <div className="lineDiv">
-                  <h3 className="skillName">NEXT.JS</h3>
-                  <div className="barDiv">
-                    <div className="line line7"></div>
-                    <p>40%</p>
                   </div>
                 </div>
               </div>
