@@ -32,7 +32,7 @@ const Knowledge = () => {
     <div className="skillsContainer" id="skills">
       <div className="skillsTitle">
         <h2
-          data-aos="fade-right"
+          data-aos="fade-up"
           data-aos-offset="100"
           data-aos-duration="800"
           className="aboutTitle"
@@ -78,7 +78,7 @@ const Knowledge = () => {
                   <h3 className="skillName">EXPRESS.JS</h3>
                   <div className="barDiv">
                     <div className="line line5"></div>
-                    <p>50%</p>
+                    <p>40%</p>
                   </div>
                 </div>
               </div>
@@ -106,10 +106,10 @@ const Knowledge = () => {
                 </div>
 
                 <div className="lineDiv">
-                  <h3 className="skillName">JQUERY</h3>
+                  <h3 className="skillName">TYPESCRIPT</h3>
                   <div className="barDiv">
                     <div className="line line8"></div>
-                    <p>30%</p>
+                    <p>50%</p>
                   </div>
                 </div>
               </div>

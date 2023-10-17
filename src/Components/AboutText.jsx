@@ -54,7 +54,7 @@ const AboutText = () => {
             create magic together. Although my passion is frontend development,
             I have put pen to paper during a design process, been completely
             lost in a full stack environment, and have even worn the
-            entrepreneurship hat.{" "}
+            entrepreneurship hat.
           </p>
         </div>
         <div className="overflowHidden">

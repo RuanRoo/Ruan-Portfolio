@@ -87,7 +87,7 @@ const Contact = () => {
               <label className="label" name="message">
                 Message
               </label> <br />
-              <textarea className="inputMessage" name="message"></textarea>{" "}
+              <textarea className="inputMessage" name="message"></textarea>
               <br />
             </div>
             <div className="sendDiv">

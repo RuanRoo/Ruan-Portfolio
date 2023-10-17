@@ -4,6 +4,8 @@ import { useEffect } from "react";
 import capitalExpress from "../Assets/capitalExpress.jpg";
 import clubhouse from "../Assets/Clubhouse.png";
 import budgetBuddy from "../Assets/budgetBuddy.png";
+import excella from "../Assets/excella.png";
+import almostSunday from "../Assets/almostSunday.png";
 import { HashLink as Link } from "react-router-hash-link";
 
 const Projects = () => {
@@ -44,18 +46,64 @@ const Projects = () => {
         ></div>
       </span>
       <div className="projects">
+        <div className="projectSections2">
+          <div className="projectDescription2">
+            <h2>Excella</h2>
+            <p>
+              I was brought on board by{" "}
+              <a href="https://www.4shaw.co/">4Shaw Productions</a> on a
+              contract basis to take the lead in the development of this project
+              from the ground up. Given the project's static nature, I crafted
+              it using HTML, CSS, and vanilla JavaScript to ensure an efficient
+              and seamless user experience. It was a fantastic chance for me to
+              see a project through from start to finish and gain some valuable
+              experience as a developer.
+            </p>
+            <a href="https://excella.co.za/" target="_blank" rel="noreferrer">
+              view project
+            </a>
+          </div>
+          <div className="projectImageDiv">
+            <img src={excella} className="projectImage" alt="" />
+          </div>
+          <div className="number2">1.</div>
+        </div>
+        <div className="projectSectionsMobile">
+          <div className="number2">1.</div>
+          <div className="projectImageDiv">
+            <img src={excella} className="projectImage" alt="" />
+          </div>
+          <div className="projectDescription2">
+            <h2>Excella</h2>
+            <p>
+              I was brought on board by{" "}
+              <a href="https://www.4shaw.co/">4Shaw Productions</a> on a
+              contract basis to take the lead in the development of this project
+              from the ground up. Given the project's static nature, I crafted
+              it using HTML, CSS, and vanilla JavaScript to ensure an efficient
+              and seamless user experience. It was a fantastic chance for me to
+              see a project through from start to finish and gain some valuable
+              experience as a developer.
+            </p>
+            <a href="https://excella.co.za/" target="_blank" rel="noreferrer">
+              view project
+            </a>
+          </div>
+        </div>
         <div className="projectSections">
-          <div className="number">1.</div>
+          <div className="number">2.</div>
           <div className="projectImageDiv">
             <img src={capitalExpress} className="projectImage" alt="" />
           </div>
           <div className="projectDescription">
             <h2>Capital Express</h2>
             <p>
-              I was the lead developer on this projects while working on a
-              contract for <a href="https://www.4shaw.co/">4Shaw Productions</a>
-              . It is an understated yet functional websoite that was built in
-              Wordpress using Elementor and some custom CSS and Javascript.
+              This is another project where I was the lead developer while
+              working on contract for
+              <a href="https://www.4shaw.co/">4Shaw Productions</a>. It is an
+              understated yet functional Cash Advance solution website that was
+              built in Wordpress using Elementor and some custom CSS and
+              Javascript.
             </p>
             <a
               href="https://capitalexpress.co.za/"
@@ -90,10 +138,10 @@ const Projects = () => {
           <div className="projectImageDiv">
             <img src={clubhouse} className="projectImage" alt="" />
           </div>
-          <div className="number2">2.</div>
+          <div className="number2">3.</div>
         </div>
         <div className="projectSectionsMobile">
-          <div className="number2">2.</div>
+          <div className="number2">3.</div>
           <div className="projectImageDiv">
             <img src={clubhouse} className="projectImage" alt="" />
           </div>
@@ -119,7 +167,7 @@ const Projects = () => {
           </div>
         </div>
         <div className="projectSections">
-          <div className="number">3.</div>
+          <div className="number">4.</div>
           <div className="projectImageDiv">
             <img src={budgetBuddy} className="projectImage" alt="" />
           </div>
@@ -141,7 +189,54 @@ const Projects = () => {
             </a>
           </div>
         </div>
+        <div className="projectSections2">
+          <div className="projectDescription2">
+            <h2>Almost Sunday</h2>
+            <p>
+              This project represents a collaborative effort between a UI/UX
+              designer and myself. I took charge of developing her portfolio
+              while she worked on designing mine. The entire project was
+              executed using React and includes complex layouts and micro
+              interactions.
+            </p>
+            <a
+              href="https://www.almostsunday.co.za/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              view project
+            </a>
+          </div>
+          <div className="projectImageDiv">
+            <img src={almostSunday} className="projectImage" alt="" />
+          </div>
+          <div className="number2">5.</div>
+        </div>
+        <div className="projectSectionsMobile">
+          <div className="number2">5.</div>
+          <div className="projectImageDiv">
+            <img src={almostSunday} className="projectImage" alt="" />
+          </div>
+          <div className="projectDescription2">
+            <h2>Almost Sunday</h2>
+            <p>
+              This project represents a collaborative effort between a UI/UX
+              designer and myself. I took charge of developing her portfolio
+              while she worked on designing mine. The entire project was
+              executed using React and includes complex layouts and micro
+              interactions.
+            </p>
+            <a
+              href="https://www.almostsunday.co.za/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              view project
+            </a>
+          </div>
+        </div>
         <Link to="#contact">
+          <br />
           <div className="hireButton">hire me</div>
         </Link>
       </div>
