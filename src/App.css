@@ -674,7 +674,7 @@ a {
   animation-delay: 1.7s;
 }
 .line8:after {
-  max-width: 30%;
+  max-width: 50%;
   animation-delay: 1.9s;
 }
 @keyframes animate {
