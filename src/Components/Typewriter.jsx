@@ -15,7 +15,7 @@ function Typewriter() {
 
   return (
     <div>
-        <h2 className="type-writer">I am a junior frontend developer.</h2>
+        <h2 className="type-writer">I am a frontend developer.</h2>
         {showComponent && <ViewWork />}
     </div>
   )
